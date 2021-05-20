@@ -1,2 +1,0 @@
-# edom
-edom repository description
