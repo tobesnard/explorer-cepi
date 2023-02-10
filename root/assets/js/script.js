@@ -6,12 +6,12 @@ TreeView.selecter="#treeview"
 
 TreeView.json=[
     {"type":"directory","name":"Matières", "opened":true, "children":[
-        {"type":"file", "name":"histoire.pdf", "href":"histoire.pdf"},
-        {"type":"file", "name":"géographie.pdf", "href":"geographie.pdf"},
-        {"type":"file", "name":"mathématique.pdf", "href":"mathematique.pdf"},
+        {"type":"file", "name":"histoire.pdf", "href":"histoire.pdf", size:100, modificationDate:"10/02/2023 16:38"},
+        {"type":"file", "name":"géographie.pdf", "href":"geographie.pdf", size:100, modificationDate:"10/02/2023 16:38"},
+        {"type":"file", "name":"mathématique.pdf", "href":"mathematique.pdf", size:100, modificationDate:"10/02/2023 16:38"},
         {"type":"directory","name":"Botanique", "opened":false, "children":[
-            {"type":"file", "name":"botanique1.pdf", "href":"botanique.pdf"},
-            {"type":"file", "name":"botanique2.pdf", "href":"botanique2.pdf", "selected":true},
+            {"type":"file", "name":"botanique1.pdf", "href":"botanique.pdf", size:100, modificationDate:"10/02/2023 16:38"},
+            {"type":"file", "name":"botanique2.pdf", "href":"botanique2.pdf", "selected":true, size:100, modificationDate:"10/02/2023 16:38"},
         ]},
     ]},
 ]
@@ -33,13 +33,16 @@ TreeView.refresh=function(){
                         _html=`<li onclick="openclose($(this))" type="${e.type}">
                             <span><i class="chevron fa-solid fa-circle-chevron-right ${e.opened ? 'folder-open' : 'folder-close'}"  style="margin-left:${depth*paddingLeft}px;padding-left:${offset}px"></i></span>
                             <span class="fa-solid fa-folder directory" ></span>
-                            <span >${e.name}</span>
+                            <span class="dirname">${e.name}</span>
                         </li><span class="tools-box"></span>`
                     }
                     if(e.type=="file"){
                         _html=`<li onclick="showFile('${e.href}')" type="${e.type}"  ">
-                            <span class="fa-regular fa-file-pdf file" style="padding-left:${depth*paddingLeft+offset}px"></span>
-                            <span>${e.name}</span>
+                            <div class="filename" style="padding-left:${depth*paddingLeft+offset}px">
+                                <span class="fa-regular fa-file-pdf file" ></span>
+                                <span>${e.name}</span>
+                            </div>
+                            <div class="modifDate" style="padding-left:${depth*paddingLeft+offset}px" >( Modifié le : ${e.modificationDate} )</div>
                         </li><span class="tools-box"></span>`
                     }
                     html += _html
@@ -63,8 +66,23 @@ TreeView.refresh=function(){
             <button type="button" id="btnDelDir"  class="btn btn-outline-danger "  onclick="delDir(this)"><i class="fa-solid fa-trash-can btn-font-es"></i></button>
         </div>
     `
+     tools=`
+    
+    <div class="btn-group group-tools" >
+        <button type="button" id="btnAddDir"  class="btn btn-outline-warning " onclick="addDir(this)"  data-bs-toggle="modal" data-bs-target="#modal" ><i class="fa-solid fa-folder-plus btn-font-es" ></i></button>
+        <button type="button" id="btnAddFile" class="btn btn-outline-warning " onclick="addFile(this)" data-bs-toggle="modal" data-bs-target="#modal" " ><i class="fa-solid fa-file-circle-plus btn-font-es"></i></button>
+        <button type="button" id="btnDelDir"  class="btn btn-outline-danger"   onclick="showConfirmDeletion(this)"><i class="fa-solid fa-trash-can btn-font-es"></i></button>
+    </div>
+    <div class="btn-group more-tools" >
+       <button type="button" id="btnDelDirDefnitively"  class="btn btn-danger btn-font-es"  onclick="delDir(this)" ><span>Supprimer définitivement ?</span></button>
+    </div>
+    
+`
+    
+    
     $('span.tools-box').html(tools)
     $('span.tools-box').hide()
+    $('.more-tools').hide()
 
 }
 
@@ -144,7 +162,10 @@ function addFile(e){
         }
     });
 }
-
+function showConfirmDeletion(){
+    console.log("btndelDir clicked")
+     $('.more-tools').show()
+}
 
 
 /////////// Main
@@ -159,20 +180,12 @@ $(function() {
           });
         $(this).addClass("mouseover")
         $(this).next().show();
+        $('.more-tools').hide()
     })
 
-    //Les modals
-    // const myModal = document.getElementById('addDir')
-    // const myInput = document.getElementById('myInput')
 
-    // myModal.addEventListener('shown.bs.modal', () => {
-    //  myInput.focus()
-    // })
 
-    // Dev modal
-    // $("#btnAddDir").click()
-    $("#btnAddFile").click()
-
+ 
     
 })
 
