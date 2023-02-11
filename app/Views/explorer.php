@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
   </head>
-<body style="height:900px">
+<body style="height:920px ;background-color: #b07d7d8a;
+    background-image: url(../images/bg_header.jpg);
+    background-blend-mode: lighten;">
 
 <!-- entête -->
 <div  id="header" class=" container-fluid ">
@@ -20,7 +22,10 @@
         <nav class="navbar navbar-light mx-0 px-0 ">
             <a class="navbar-brand" >
                 <img id="logo" src="images/logo.png" class="d-inline-block align-top" >
-                <span id="entreprise"class="content entreprise"><article>CEPI</article></span>
+                <span id="entreprise-animation">
+                  <span id="effect"><span id="entreprise"class="content entreprise">CEPI</span></span>
+                  <span id="entreprise"class="content entreprise upper"><span>CEPI</span></span>
+                </span>
             </a>
             <span>
                 <button id="logout" class="highlight" type="button" href="/" >Login / Logout</button>
@@ -28,6 +33,60 @@
         </nav>  
     </div>
 </div>  
+<style>
+
+#entreprise-animation{
+  position:absolute;
+  zoom: 1.2;
+  top: 0px;
+}
+#entreprise-animation .entreprise{
+  position:absolute;
+}
+#entreprise-animation .effect{
+  position:absolute;
+}
+#entreprise-animation .upper{
+    margin-top: -3px;
+    margin-left: 2px;
+    opacity:0.9;
+}
+span#effet {
+  text-transform: uppercase;
+  border: 4px double rgba(255, 255, 255, 0.25);
+  border-width: 4px 0;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 40em;
+  margin: 0 0 0 -20em;
+}
+span#effect span {
+  margin: 0 auto;
+  text-shadow: 0 0 13px #ed722dab, 1px 2px 3px #863d1378;
+  background: url(images/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 60s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+
+}
+
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+</style>
+
+
 
 <!-- navbar-->  
 <div id="navigation" class="container-fluid  mb-3">
@@ -54,6 +113,7 @@
           </span>
     </div>
 </div>    
+
 
 
 
@@ -158,12 +218,21 @@
       </div>
 </template>
 
-
-
+<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
 <script type="text/javascript" src="https://kit.fontawesome.com/cf1044164a.js" crossorigin="anonymous" async></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script type="text/javascript" src="js/explorer.js"></script>
+
+<!-- <script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<script type="module" src="js/explorer.main.js"></script> -->
+
 </body>
 </html>

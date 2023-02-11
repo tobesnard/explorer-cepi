@@ -24,10 +24,9 @@
     <div id="login-body-content" class="container-fluid">
        
         <div id="profils">
-            <button  class="profil  highlight highlightProfil" style="background-image: url(https://i.pravatar.cc/80?img=70);"></button>
-            <button  class="profil  highlight highlightProfil"style="background-image: url(https://i.pravatar.cc/80?img=53);"></button>
-            <button  class="profil  highlight highlightProfil"style="background-image: url(https://i.pravatar.cc/80?img=42);"></button>
-            
+            <button  class="profil  highlight highlightProfil" > <img style="background-image: url(https://i.pravatar.cc/80?img=70); "></img></button>
+            <button  class="profil  highlight highlightProfil" > <img style="background-image: url(https://i.pravatar.cc/80?img=53); "></img></button>
+            <button  class="profil  highlight highlightProfil" > <img style="background-image: url(https://i.pravatar.cc/80?img=42); "></img></button>
         </div>
 
         <div id="reset" class="mb-3"><button ><i class="fa-solid fa-rotate-left"></i></button></div>
