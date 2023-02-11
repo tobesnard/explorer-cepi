@@ -1,7 +1,7 @@
 *{
     --main-bg-color: #9fb07d;
     --secondary-bg-color:#f1d7c4;
-    --secondary-text-color:#52af5f;
+    --secondary-text-color:rgb(82, 175, 95);
     --main-dark-color:#323639;
 
 }
@@ -65,6 +65,20 @@
 
 body{
     background-color: var(--main-bg-color);
+}
+
+
+#header{
+    background-image: url(../images/bg_header.jpg) ;
+    background-position-y: bottom !important; 
+    opacity: 0.8;
+}
+button#logout{
+    background:transparent;
+}
+div#navigation{
+    background-image: url(../images/bg_header.jpg) ;
+    background-position-y: 196px !important;
 }
 
 #entreprise{ 
@@ -178,66 +192,57 @@ button.close-button{
 .card-body-explorer{
     padding-left:0;
 }
-
+.card-body-visio{
+    background-color: #323639;
+}
+/* *********************************************/
 /* TreeView */
 #treeview ul{
     padding:0;
 }
-
 #treeview li{
-    /* height:30px; */
     padding-top: 1px;
     padding-bottom: 6px;
     text-shadow: 0px 0px 76px #6f4337, 2px 2px 5px #d18d82, 1px 1px 1px white, 1px 1px 7px white;
 }
-
 #treeview .modifDate{
     font-size: x-small;
     margin-top:-5px;
-
 }
 #treeview .filename, #treeview .dirname{
     font-weight: 600;
-
 }
-
-.mouseover{
+#treeview .mouseover{
     background-color: #9fb07d;
     width:75%;
     border-radius: 0 11px 10px 0;
     box-shadow: 2px 2px 4px #322127;
 }
-
-
-ul {
+#treeview ul {
     list-style-type:none;
 }
-.file{
+#treeview .file{
     color:red
 }
-.directory{
+#treeview .directory{
     color:rgb(244, 244, 154);
    
 }
-.file, .directory{
+#treeview .file, #treeview .directory{
     padding-right: 5px;
 }
 
-.tools{
+#treeview .tools{
     width:80px;
 }
 
-.btn-font-es{
+#treeview .btn-font-es{
     font-size: small;
 }
+
 .group-tools{
-    /* height:23px; */
     float:right;
     box-shadow: 0px 2px 7px #333333;
-    /* top:-32px; */
-    /* box-shadow: 0px 2px 7px #333333, 0px 1px 11px white; */
-    /* border-radius: 5px; */
-    /* border-color: black; */
 }
 .group-tools i{
     position: absolute;
@@ -247,19 +252,24 @@ ul {
 .group-tools button{
     width:25px;
 }
-
-.more-tools, .group-tools{
+.group-tools, .more-tools{
     height:23px;
+}
+
+.tools-box-directory{
+    position:relative;
+ top:-27px;
+}
+.tools-box-file{
+    position:relative;
     top:-32px;
-    /* border-radius: 5px; */
 }
 .more-tools{
-    top:-35px;
+    top:-2px;
     left: 429px;
     z-index:1000;
     box-shadow: 0px 2px 7px red;
 }
-
 .more-tools span{
     position: relative;
     top: -5px;
@@ -267,19 +277,16 @@ ul {
 }
 
 
-.btn-outline-danger {
+.btn-outline-danger { /*bouton rouge */
     --bs-btn-border-color: #9fb07d;
 }
-
-
-.btn-outline-warning{
-    border-color:#9fb07d;
+.btn-outline-warning{ /*bouton vert */
+    border-color:var(--main-bg-color);
     color:#52af5f;
 }
-
-.btn-outline-warning:hover{
-    border-color:green;
-    background-color: #52af5f;
+.btn-outline-warning:hover{ /*bouton vert */
+    border-color:var(--main-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 
@@ -290,7 +297,6 @@ ul {
 /**** Folder **/
 .folder-open{
     transform: unset;
-    
 }
 .folder-close{
     transform: rotate(90deg); 
@@ -300,7 +306,7 @@ ul {
 }
 
 
-/* Outils */
+/* Barre d'outils */
 .btn-group-vertical{
     margin-left: -42px;
     width:50px;
@@ -309,9 +315,6 @@ ul {
     width:32px;
     margin-left: 20px;
 }
-
-
-/***** Entete */
 button.rounded-circle{
     background-color: #323639;
     border: #9fb07d thin solid;
@@ -327,16 +330,15 @@ button.rounded-circle:hover{
 
 
 
+/*******************************************
+/** Hilight
+*/
 
 .highlight{
     box-shadow: inset -2px 1px 10px 0px #100910, inset -1px 1px 4px black;
     text-shadow: 0px 1px 5px #52af5f, 2px 1px -2px black;
     margin-right: 56px;
 }
-
-
-
-
 
 @-webkit-keyframes pulse {
     from {
@@ -347,14 +349,15 @@ button.rounded-circle:hover{
     }
   }
   
-  @keyframes pulse {
+@keyframes pulse {
     from {
       box-shadow: 0 0 0 0 rgba(82, 175, 95, 0.4);
     }
     to {
       box-shadow: 0 0 0 45px rgba(3, 149, 229, 0);
     }
-  }
+}
+
   .highlight {
     position: relative;
     width: 200px;
@@ -411,9 +414,16 @@ button.rounded-circle:hover{
     transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
   }
 
-/* Barre de separation */
+
+
+
+
+
+/***************************
+/*  Modal
+*/
 .or-separatorLigne {
-    border-bottom: thin black solid;
+    border-bottom: thin var(--secondary-text-color) solid;
     top: 12px;
     position: relative;
 }
@@ -428,8 +438,94 @@ button.rounded-circle:hover{
     padding-right: 10px;
 }
 
-/* .modal-footer{
-    background-image: url(assets/images/bg_header.jpg);
-    background-position-y: bottom !important;
-    opacity: 0.8;
-} */
+
+
+
+/********************************************************************************************************************************/
+/* LOGIN */
+/********************************************************************************************************************************/
+#login-body-content{
+   position:absolute;
+   top:120px;
+}
+#profils{
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.profil{
+    margin:20px;
+}
+
+html {
+    background: url(../images/bg_header.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+ .highlightProfil {
+   width:80px;
+   height:80px;
+  }
+
+  #profils img{
+    left: 0px;
+    position: relative;
+    top: 0px;
+    margin:0;
+  }
+  #profils button{
+    padding:0;
+    border:none;
+  }
+  #logins{
+    display: none;
+    width:250px;
+    margin-left:auto;margin-right:auto;
+    color: var(--secondary-text-color);
+  }
+  #logins input{
+    background:transparent;
+    color: var(--secondary-text-color);
+  }
+  #logins input::placeholder {
+    color: var(--secondary-text-color);
+    opacity: 1;
+  }
+  #logins button {
+    width:100%
+  }
+
+  #logins .form-control{
+    border-color: var(--main-bg-color);
+  }
+  #logins .form-control:focus{
+    box-shadow: 0 0 0 0.25rem rgb(82 175 95 / 25%);
+  }
+
+
+#reset{
+    margin-left:auto;margin-right:auto;
+    width: fit-content;
+}
+#reset button{
+    background: transparent;
+    color: var(--secondary-text-color);
+    opacity: 0;
+    border:none;
+}
+
+
+
+
+
+
+
+
+
+  #logins,#reset,#profils{
+    /* border:thin yellow solid; */
+  }
