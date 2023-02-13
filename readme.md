@@ -3,9 +3,6 @@
 Une version en ligne est disponible [ici](http://109.21.6.9:38669)
 ( si le serveur ne répond pas, c'est probablement que mon ordinateur s'est éteint !! )
 
-Une version simplifiée est disponible dans l'archive `version-html.zip` à la racine du dépôt.
-Cette version est la version de vendredi. uniquement codée en html, Javascript et Css et aucunes fonctionnalités dans cette version.
-
 # Astuce
 - le bouton vert à droite permet de régénérer l'arborescence des fichiers
 
