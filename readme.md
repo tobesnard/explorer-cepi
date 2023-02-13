@@ -26,6 +26,7 @@ Cette version est la version de vendredi. uniquement codée en html, Javascript 
 - les événements clavier tendent à provoquer les erreurs 404
 - la création d'un dossier sur un documents interrompt l'upload du fichier
 - sur la page de login, l'animation failli de temps en temps
+- il manque une barre de progression lors d'un upload, cela donne un sensation de bug du système
 
 ## Enoncé de l'exercice :
 L'idée est de réaliser un site qui permet de déposer des documents et de 
