@@ -40,7 +40,7 @@ TreeView.refresh=function(){
         TreeView.tree() // Construit l'arbre
         TreeView.toolsbar() // Ajout les raccourcis
         TreeView.addListeners() // Les evenements
-        console.log(JSON.stringify(TreeView.json))
+        // console.log(JSON.stringify(TreeView.json))
     })
 }
 
@@ -181,7 +181,6 @@ TreeView.explore=function( json ,depth=0 ){
         // Recursion pour la constructuion de l'arbre
         html=""
         for( e of json){
-            console.log(e)
             if(e.type == "directory"){ 
                 html+= TreeView.directoryHtml(e.type,e.name, e.href, e.opened, depth*20  )
                 if(e.children ){
@@ -201,6 +200,7 @@ TreeView.explore=function( json ,depth=0 ){
 TreeView.toolsbar=function(){
     // Ajoute les commandes (access rapide)
     let tools=`
+        <div id="tools">
         <div class="btn-group group-tools" >
             <button type="button" id="btn-addDirectory"  class="btn btn-outline-warning "   onclick="TreeView.addDirectory(this)" path="" data-bs-toggle="modal" data-bs-target="#modal" ><i class="fa-solid fa-folder-plus btn-font-es" ></i></button>
             <button type="button" id="btnAddFile" class="btn btn-outline-warning "          onclick="TreeView.addFile(this)" data-bs-toggle="modal" data-bs-target="#modal" ><i class="fa-solid fa-file-circle-plus btn-font-es"></i></button>
@@ -208,6 +208,7 @@ TreeView.toolsbar=function(){
         </div>
         <div class="btn-group more-tools" >
         <button type="button" id="btndeletionDefnitively"  class="btn btn-danger btn-font-es"  onclick="TreeView.delete(this)" ><span>Supprimer définitivement ?</span></button>
+        </div>
         </div>
     `
     $('span.tools-box').html(tools).hide()
@@ -280,7 +281,6 @@ $(function() {
     $("button").keypress(function(e){
         e.preventDefault()
     })
-    console.log(TreeView.json)
 })
 
 

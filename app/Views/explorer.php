@@ -75,7 +75,7 @@
     <div class="row" style="min-height: 500px;">
 
         <!-- Explorateur -->
-        <div class="card-container col-4 px-0">
+        <div id="card-explorer" class="card-container col-4 px-0">
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">Explorateur</h5>
@@ -88,7 +88,7 @@
 
 
         <!-- Visionneuse -->
-        <div class="col card-container" >
+        <div id="card-viewer" class="col card-container" >
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">Visionneuse PDF</h5>

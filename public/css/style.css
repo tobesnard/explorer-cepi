@@ -186,7 +186,9 @@ a.nav-link{
     background-color: transparent;
     border: none;
 }
-
+#card-explorer{
+    width : 400px;
+}
 .card-header, .modal-header{
     color:var(--secondary-text-color);
     background: linear-gradient(115deg, rgba(15,10,14,1) 1%, rgba(109,53,30,1) 20%);
@@ -284,10 +286,22 @@ button.close-button{
     font-size: small;
 }
 
+#tools{
+    width:200%;
+    /* border: thin white solid; */
+    padding-left:300px;
+}
 .group-tools{
-    float:right;
+    /* float:right; */
     box-shadow: 0px 2px 7px #333333;
 }
+.more-tools{
+    /* top:-2px; */
+    /* left: 429px; */
+    z-index:1000;
+    box-shadow: 0px 2px 7px red;
+}
+
 .group-tools i{
     position: absolute;
     top:5px;
@@ -302,18 +316,13 @@ button.close-button{
 
 .tools-box-directory{
     position:relative;
- top:-27px;
+    top:-27px;
 }
 .tools-box-file{
     position:relative;
     top:-32px;
 }
-.more-tools{
-    top:-2px;
-    left: 429px;
-    z-index:1000;
-    box-shadow: 0px 2px 7px red;
-}
+
 .more-tools span{
     position: relative;
     top: -5px;
