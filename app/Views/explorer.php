@@ -45,24 +45,27 @@
     <div class="container ">
         <nav class="navbar navbar-expand-lg  p-0">
             <div class="container-fluid p-0" style="margin-left:-12px">
-                <!-- Home -->
-              <a class="navbar-brand"><i class="fa-solid fa-house text-white"></i></a><span class="separator font-weight-light">|</span>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item"> <a class="nav-link active text-white" >Pharma Vitale</a></li><span class="separator font-weight-light">|</span>
-                    <li class="nav-item"> <a class="nav-link active text-white" >Gestionnaire de Fichier</a></li>
-                  </ul>
-              </div>
-            </div>
-          </nav>  
+              <span class="menurow">
 
-          <span id="social"> 
-            <a class="social-icon" href="mailto:f.vallee@cepisoft.net" > <i class="fa fa-envelope"></i> </a>
-            <a class="social-icon" href="https://github.com/tobesnard/explorer-cepi"><i class="fa fa-github" aria-hidden="true"></i> </a>
-            <a class="social-icon" href="https://www.facebook.com/Pharmavitale/" ><i class="fa fa-facebook" aria-hidden="true"></i> </a>
-            <a class="social-icon" href="https://www.linkedin.com/company/pharmavitale"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> </a>
-            <a class="social-icon" href="https://www.pharmavitale.fr/"><i class="fa fa-globe" aria-hidden="true"></i></a>
-          </span>
+                <nav id="breadcrumb"  class="col-8"  >
+                    <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-house "></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item active" >Explorer de fichiers</li>
+                    </ol>
+                </nav>
+
+                <span id="social" class="col me-2" > 
+                  <a class="social-icon" href="mailto:f.vallee@cepisoft.net" > <i class="fa fa-envelope"></i> </a>
+                  <a class="social-icon" href="https://github.com/tobesnard/explorer-cepi"><i class="fa fa-github" aria-hidden="true"></i> </a>
+                  <a class="social-icon" href="https://www.facebook.com/Pharmavitale/" ><i class="fa fa-facebook" aria-hidden="true"></i> </a>
+                  <a class="social-icon" href="https://www.linkedin.com/company/pharmavitale"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> </a>
+                  <a class="social-icon" href="https://www.pharmavitale.fr/"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                </span>
+
+              </span>
+          </div>
+      </nav>  
     </div>
 </div>    
 
@@ -73,6 +76,7 @@
 <!-- Container Principale -->
 <div class="container">
     <div class="row" style="min-height: 500px;">
+
 
         <!-- Explorateur -->
         <div id="card-explorer" class="card-container col-4 px-0">
@@ -94,7 +98,7 @@
                     <h5 class="card-title">Visionneuse PDF</h5>
                 </div>
                 <div class="card-body card-body-visio d-inline-flex p-2" > 
-                    <embed id="embed" src="pdf/regeneration/Botanique/botanique2.pdf" width="100%"  type="application/pdf"/> 
+                    <embed id="embed" src="pdf/regeneration/Botanique/botanique dans l'art.pdf" width="100%"  type="application/pdf"/> 
                 </div>
             </div>
         </div>
@@ -108,13 +112,13 @@
                 </div>
                 <div class="card-body" style="background-color: #323639;"> 
                     <div class="btn-group-vertical">
-                        <button type="button" class="btn rounded-circle btn-primary mb-1" ><i class="fa-solid fa-print"></i></button>
+                        <button type="button" id="imprimer" OnClick="javascript:window.print()" class="btn rounded-circle btn-primary mb-1" ><i class="fa-solid fa-print"></i></button>
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-trash-can"></i></button>
                         <button type="button" class="btn rounded-circle shadow-sm btn-primary mb-1 "><i class="fa-solid fa-folder-plus"></i></button>
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-file-circle-plus"></i></button>
-                        <button type="button" id="regeneration" class="btn rounded-circle shadow  btn-primary mb-1" data-toggle="tooltip" data-placement="right" title="Régénère les fichiers " style="background: var(--main-bg-color);">
-                            <i class="fa-solid fa-arrows-spin" style="font-size: x-large; position: relative; top: 1px;"></i></button>        
-                    </div>
+                      </div>
+                      <button type="button" id="regeneration" class="btn rounded-circle shadow  btn-primary mb-1" data-toggle="tooltip" data-placement="right" title="Régénère les fichiers " style="background: var(--main-bg-color);">
+                          <i class="fa-solid fa-arrows-spin" style="font-size: x-large; position: relative; top: 1px;"></i></button>        
                 </div>
             </div>
         </div>
@@ -126,7 +130,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade mt-5" id="modal" tabindex="-1" >
+<div class="modal fade" id="modal" tabindex="-1" >
   <form id="formElem" class="form"  method="">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -146,26 +150,19 @@
 </form>
 </div>
 
-<!-- Add Directory -->
-<template id="modal-addDirectory">
-  <div class="form-floating mb-3">
-    <input type="text" name="dirname" class="form-control" id="dirname"  placeholder="name@example.com">
-    <label for="dirname">Nom du Répertoire</label>
-  </div>
-</template>
-
 
 <!-- Import Files -->
 <template id="modal-addFile">
-    <div class="mb-3">
-      <input  type="file" name="file" accept=".pdf"  id="files_inputbox" class="form-control" >
-    </div>
-    <div class="mb-2"><div class="or-separatorLigne"></div><div  class="or-separatorText">Ou</div></div>
+      <input type="hidden" name="file"   id="files_inputbox"  style="display:none" />
       <div class="dropzone" id="dropZone-addFiles">
           <div class="dz-message needsclick">    
               <i class="fa-solid fa-file-arrow-up text-primary fs-3"></i>
-              <div class="ms-4">
-                  <h3 class="fs-5 fw-bold text-gray-900 mb-1">Glissez-déposez les fichiers ici</h3>
+              <div class="">
+                  <p class="fs-5 fw-bold text-gray-900 mb-1">
+                    <h3>Cliquez</h3> 
+                    <div class="or-separatorLigne"></div><div  class="or-separatorText">Ou</div> 
+                    <h3 class="glissez-deposer">Glissez-déposez les fichiers ici<h3>
+                </p>
               </div>
           </div>
       </div>

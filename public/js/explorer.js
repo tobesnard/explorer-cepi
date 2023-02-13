@@ -46,32 +46,9 @@ TreeView.refresh=function(){
 }
 
 TreeView.addDirectory = function (e){
-    // Paramètrages de la modal
-    $(".modal-title").text('Ajouter un Répertoire')
-    $(".modal-body").html( $("template#modal-addDirectory").html() )
-    $("#modal-dimissButton").text("Annuler")
-    $("#modal-allowButton").text("Créer")
-    $("#dirname").attr('path', $(e).closest('.tools-box').prev().attr('pathfile') ) 
-    // Requête demandant l'ajout du répertoire
-    $("#modal-allowButton").off().click(function(e){
-        dirname = $("#dirname").first().attr('path') + "/"+$("#dirname").val()
-        console.log(dirname)
-        $.ajax({
-            url: "/explorer/add/directory",
-            method: "PUT",
-            contentType:'application/json',
-            data : JSON.stringify({"dirname":dirname}),
-            success : function(data){
-                console.log(data)
-                TreeView.refresh()
-            },
-            error : function(req,msg,error){
-                console.log(req +" "+msg+""+error)
-            }
-            
-        })
-        $('.modal').modal('toggle');
-    })
+    $(".input-box").show();
+    $(".input-box input").focus()
+
 }
 
 TreeView.addFile = function (e){
@@ -85,8 +62,12 @@ TreeView.addFile = function (e){
     form.attr('action','explorer/add/file')
     form.attr('enctype','multipart/form-data')
     // Paramètre supplémentaire (pathname)
-    $("#files_inputbox").attr('path', $(e).closest('.tools-box').prev().attr('pathfile') ) 
-    
+    li=$(e).closest('.tools-box').prev()   
+    $("#files_inputbox").attr('path', li.attr('path') ) 
+    $("#files_inputbox").attr('filename', li.attr('filename') ) 
+    $("#files_inputbox").attr('pathfile', li.attr('pathfile') ) 
+    $("#files_inputbox").attr('type', li.attr('type') ) 
+
         // Cas du dropBox
         var myDropzone = new Dropzone("#dropZone-addFiles", {
             url: "explorer/add/file", 
@@ -97,7 +78,10 @@ TreeView.addFile = function (e){
             addRemoveLinks: true,
             init: function() {
                 this.on("sending", function(file, xhr, formData){
-                        formData.append("path", $("#files_inputbox").attr('path'));
+                        formData.append("path", $("#files_inputbox").attr('path'))
+                        formData.append("filename", $("#files_inputbox").attr('filename'))
+                        formData.append("pathfile", $("#files_inputbox").attr('pathfile'))
+                        formData.append("type", $("#files_inputbox").attr('type'))
                         console.log(formData)
                 });
             },
@@ -106,25 +90,31 @@ TreeView.addFile = function (e){
                 TreeView.refresh()
             }
         });
-        // Cas de l'inputbox 
-        $("#modal-allowButton").off().click(function(e){
-            e.preventDefault()
-            dirname = $("#files_inputbox").attr('path')  
-            var fd = new FormData(formElem);
-            fd.append("path", dirname);
-            $.ajax({
-                url: "explorer/add/file",
-                type: "POST",
-                data: fd,
-                processData: false,  
-                contentType: false,   
-                success : function(data){
-                    console.log(data)
-                    TreeView.refresh()
-                    $('.modal').modal('toggle');
-                }
-            });
-        })
+
+        // // Cas de l'inputbox 
+        // $("#modal-allowButton").off().click(function(e){
+        //     e.preventDefault()
+        //     // dirname = $("#files_inputbox").attr('path')  
+        //     var formData = new FormData(formElem)
+        //     formData.append("path", $("#files_inputbox").attr('path'))
+        //     formData.append("filename", $("#files_inputbox").attr('filename'))
+        //     formData.append("pathfile", $("#files_inputbox").attr('pathfile'))
+        //     formData.append("type", $("#files_inputbox").attr('type'))
+        //     console.log(formData)
+
+        //     $.ajax({
+        //         url: "explorer/add/file",
+        //         type: "POST",
+        //         data: formData,
+        //         processData: false,  
+        //         contentType: false,   
+        //         success : function(data){
+        //             console.log(data)
+        //             TreeView.refresh()
+        //             $('.modal').modal('toggle');
+        //         }
+        //     })
+        // })
 }
 
 TreeView.delete=function (e){
@@ -142,6 +132,7 @@ TreeView.delete=function (e){
 }
 
 TreeView.addListeners=function(){
+
     // Les évenements sur le Treeview
     $("#treeview li").mouseover(function(e){
         $( "#treeview li" ).each(function() {
@@ -151,10 +142,16 @@ TreeView.addListeners=function(){
         $(this).addClass("mouseover")
         $(this).next().show();
         $('.more-tools').hide()
+        $('.input-box').hide()
     })
+   
 
-    $("#treeview li").click(function(e){
-        li =$($(e.target).parent('li'))
+    $("#treeview li, #treeview .filename").click(function(e){
+        // Permet de griser le fichier selectionner qui est ouvert 
+        li = $($(e.target).parent('li')) // car par défault
+        li_filename = $(e.target).parent('.filename').parent('li') // Cas click sur nom du fichier
+        if( li_filename.length != 0 ) li = li_filename
+
         let type = li.attr('type')
         if(type == "file" ){
             TreeView.fileSelected ={
@@ -165,8 +162,27 @@ TreeView.addListeners=function(){
             }
         $(TreeView.selecter+" li").removeClass('li-selected')
         li.addClass('li-selected')
-        console.dir(TreeView.fileSelected)
     }
+    })
+
+    $("input#folderInput").keypress(function(e){
+        // e.preventDefault()
+        if(e.which == 13) {
+            path=$(e.target).closest('.tools-box').prev().attr("path")
+            foldername=e.target.value
+            fullFolderName=path+"/"+foldername
+            $.ajax({
+                url: "/explorer/add/directory",
+                method: "PUT",
+                contentType:'application/json',
+                data : JSON.stringify({"dirname":fullFolderName}),
+                success : function(data){
+                    console.log(data)
+                    TreeView.refresh()
+                }
+            })
+            $(".input-box").hide();
+        } 
     })
 
 }
@@ -218,14 +234,19 @@ TreeView.explore=function( json ,depth=0 ){
 TreeView.toolsbar=function(){
     // Ajoute les commandes (access rapide)
     let tools=`
-        <div id="tools">
-        <div class="btn-group group-tools" >
-            <button type="button" id="btn-addDirectory"  class="btn btn-outline-warning "   onclick="TreeView.addDirectory(this)" path="" data-bs-toggle="modal" data-bs-target="#modal" ><i class="fa-solid fa-folder-plus btn-font-es" ></i></button>
+        <div id="tools" >
+        <div class="group-tools btn-group " >
+            <button type="button" id="btn-addDirectory"  class="btn btn-outline-warning "   onclick="TreeView.box('input add directory')" path="" ><i class="fa-solid fa-folder-plus btn-font-es" ></i></button>
             <button type="button" id="btnAddFile" class="btn btn-outline-warning "          onclick="TreeView.addFile(this)" data-bs-toggle="modal" data-bs-target="#modal" ><i class="fa-solid fa-file-circle-plus btn-font-es"></i></button>
-            <button type="button" id="btndeletion"  class="btn btn-outline-danger"          onclick="TreeView.moreTools(this)"><i class="fa-solid fa-trash-can btn-font-es"></i></button>
+            <button type="button" id="btndeletion"  class="btn btn-outline-danger"          onclick="TreeView.box('confirm deletion')"><i class="fa-solid fa-trash-can btn-font-es"></i></button>
         </div>
-        <div class="btn-group more-tools" >
-        <button type="button" id="btndeletionDefnitively"  class="btn btn-danger btn-font-es"  onclick="TreeView.delete(this)" ><span>Supprimer définitivement ?</span></button>
+        <div class="more-tools btn-group " style="display:none">
+            <button type="button" id="btndeletionDefnitively"  class="btn btn-danger btn-font-es"  onclick="TreeView.delete(this)" ><span>Supprimer définitivement ?</span></button>
+        </div>
+        <div class="input-box input-group " style="display:none">
+            <span class="input-group-text" ><i class="fa-solid fa-folder-plus"></i></span>
+            <input id="folderInput" type="text" class="form-control" placeholder="Nom du nouveau dossier" >
+            
         </div>
         </div>
     `
@@ -233,9 +254,24 @@ TreeView.toolsbar=function(){
     $('.more-tools').hide()
 }
 
-TreeView.moreTools=function(){
-    $('.more-tools').show()
+TreeView.box=function(box){
+    boxes={
+        more: {selecter:".more-tools"},
+        input:{selecter:".input-box"}
+    }
+    $.each(boxes, (i,obj)=> {  $(obj.selecter).hide() })
+    switch(box){
+        case 'confirm deletion':
+            $( boxes.more.selecter).show()
+            break
+        case 'input add directory':
+            $(boxes.input.selecter).show();
+        break
+    }
 }
+
+
+
 
 TreeView.openclose=function(e){
      // Ouvre ou ferme un dossier
@@ -296,12 +332,7 @@ $(function() {
         document.location.href="/"
     })
 
-    $("#dirname").keypress(function(e){
-        e.preventDefault()
-        if(e.which == 13) {
-            alert('You pressed enter!');
-        }
-    })
+ 
 })
 
 

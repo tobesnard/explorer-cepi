@@ -33,14 +33,13 @@ class ExplorerController extends BaseController
 
     public function addFile(){
         // Ajoute une fichier dans le dossier public/pdf/root
-
         $file = $this->request->getFile('file');
         if (! $file->hasMoved()) {
             $path = $this->request->getVar('path');
             if( $path != "") $file->move($path);
             else $file->move('./pdf/root');
         }
-        return  "Fichier ajouté";
+        return  $this->request->getVar('path');
     } 
 
     public function deleteElement(){
@@ -61,7 +60,7 @@ class ExplorerController extends BaseController
             $pathfile=$path."/".$file; 
             if(($file != ".") && ($file != "..")) {
                 if(file_exists($pathfile) && is_dir($pathfile)) {
-                    $resultsDirs[] = [ "type"=>"directory" , "pathfile"=>$pathfile, "path"=>$path, "filename"=>$file, "children"=>static::explore($pathfile),"opened"=>false ]; 
+                    $resultsDirs[] = [ "type"=>"directory" , "pathfile"=>$pathfile, "path"=>$pathfile, "filename"=>$file, "children"=>static::explore($pathfile),"opened"=>false ]; 
                 }
                 else {
                     $resultFiles[] =["type"=>"file", "pathfile"=>$pathfile, "path"=>$path, "filename"=>$file, "modificationDate"=>date ("d/m/Y H:i", filemtime($pathfile))];
