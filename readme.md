@@ -14,6 +14,7 @@ Une version en ligne est disponible [ici](http://109.21.6.9:38669)
 - codeIgniter 4
 - apache
 - system debian
+- git
 
 ## Recommandations
 - utiliser de préférence le navigateur chrome
@@ -24,6 +25,7 @@ Une version en ligne est disponible [ici](http://109.21.6.9:38669)
 - la création d'un dossier sur un documents interrompt l'upload du fichier. Il faut se mettre sur un dossier pour que cela fonctionner. Une evolution serait de placer le fichier uploader dans le dossier parent de la position actuelle.
 - sur la page de login, l'animation failli de temps en temps
 - il manque une barre de progression lors d'un upload, cela donne un sensation de bug du système
+- la confirmation de suppression est décal" celon certain ordinateur
 
 ## Enoncé de l'exercice :
 L'idée est de réaliser un site qui permet de déposer des documents et de 
