@@ -238,6 +238,9 @@ button.close-button{
 }
 /* *********************************************/
 /* TreeView */
+#treeview {
+    margin-left:20px;
+}
 #treeview ul{
     padding:0;
 }
@@ -341,8 +344,8 @@ button.close-button{
 }
 .folder-close{
     transform: rotate(90deg); 
-    top: -10px;
-    left: 9px;
+    /* top: -10px;
+    left: 9px; */
     position: relative;
 }
 

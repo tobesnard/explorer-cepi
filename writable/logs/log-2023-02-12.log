@@ -1,0 +1,484 @@
+CRITICAL - 2023-02-12 15:44:06 --> opendir(./public/pdf): failed to open dir: No such file or directory
+in APPPATH/Controllers/ExplorerController.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(40): opendir()
+ 3 APPPATH/Controllers/ExplorerController.php(62): App\Controllers\parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 15:45:23 --> opendir(./public/pdf): failed to open dir: No such file or directory
+in APPPATH/Controllers/ExplorerController.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(45): opendir()
+ 3 APPPATH/Controllers/ExplorerController.php(40): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 15:45:48 --> opendir(./public/pdf): failed to open dir: No such file or directory
+in APPPATH/Controllers/ExplorerController.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(45): opendir()
+ 3 APPPATH/Controllers/ExplorerController.php(40): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 15:46:53 --> opendir(public/pdf): failed to open dir: No such file or directory
+in APPPATH/Controllers/ExplorerController.php on line 43.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(43): opendir()
+ 3 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 16:01:45 --> filemtime(): stat failed for histoire.pdf
+in APPPATH/Controllers/ExplorerController.php on line 54.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(54): filemtime()
+ 3 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 5 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 6 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 16:02:53 --> filemtime(): stat failed for histoire.pdf
+in APPPATH/Controllers/ExplorerController.php on line 54.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(54): filemtime()
+ 3 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 5 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 6 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 16:03:24 --> filemtime(): stat failed for histoire.pdf
+in APPPATH/Controllers/ExplorerController.php on line 54.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(54): filemtime()
+ 3 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 5 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 6 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 16:04:17 --> filemtime(): stat failed for histoire.pdf
+in APPPATH/Controllers/ExplorerController.php on line 54.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(54): filemtime()
+ 3 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 5 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 6 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 16:04:40 --> filemtime(): stat failed for histoire.pdf
+in APPPATH/Controllers/ExplorerController.php on line 54.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(54): filemtime()
+ 3 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 4 APPPATH/Controllers/ExplorerController.php(50): App\Controllers\ExplorerController::parcours_dossier()
+ 5 APPPATH/Controllers/ExplorerController.php(38): App\Controllers\ExplorerController::parcours_dossier()
+ 6 APPPATH/Controllers/ExplorerController.php(20): App\Controllers\ExplorerController::makeTree()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->treeStructure()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:05:20 --> Undefined property: App\Controllers\ExplorerController::$input
+in APPPATH/Controllers/ExplorerController.php on line 29.
+ 1 APPPATH/Controllers/ExplorerController.php(29): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:10:52 --> unlink(./pdf/root/dossier 2/dossier 2.2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:13:19 --> unlink(./pdf/root/dossier 2/dossier 2.2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:14:01 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:14:08 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:14:13 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:14:52 --> unlink(./pdf/root/dossier 2/dossier 2.2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:16:25 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:17:23 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:19:58 --> unlink(./pdf/root/dossier 2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(30): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:38:11 --> unlink(./pdf/root/Matières): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(32): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:43:43 --> unlink(./pdf/root/Matières): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(32): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 18:50:30 --> unlink(./pdf/root/Matières): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(32): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 19:26:13 --> unlink(./pdf/root/Matières/tony/new_2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 34.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(34): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 20:51:35 --> Undefined index: userfile
+in APPPATH/Controllers/ExplorerController.php on line 32.
+ 1 APPPATH/Controllers/ExplorerController.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:03:58 --> Call to a member function hasMoved() on null
+in APPPATH/Controllers/ExplorerController.php on line 38.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:10:42 --> finfo_file(/tmp/phpy8BIfr): failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(302): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(291): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Files/File.php(127): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 APPPATH/Controllers/ExplorerController.php(40): CodeIgniter\Files\File->getRandomName()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:11:50 --> finfo_file(/tmp/phpXFuNpo): failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(302): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(291): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Files/File.php(127): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 APPPATH/Controllers/ExplorerController.php(40): CodeIgniter\Files\File->getRandomName()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:12:16 --> finfo_file(/tmp/php5fTtro): failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(302): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(291): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Files/File.php(127): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 APPPATH/Controllers/ExplorerController.php(40): CodeIgniter\Files\File->getRandomName()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:14:21 --> finfo_file(/tmp/phphlwrpq): failed to open stream: No such file or directory
+in SYSTEMPATH/Files/File.php on line 115.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Files/File.php(115): finfo_file()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(302): CodeIgniter\Files\File->getMimeType()
+ 4 SYSTEMPATH/HTTP/Files/UploadedFile.php(291): CodeIgniter\HTTP\Files\UploadedFile->guessExtension()
+ 5 SYSTEMPATH/Files/File.php(127): CodeIgniter\HTTP\Files\UploadedFile->getExtension()
+ 6 APPPATH/Controllers/ExplorerController.php(42): CodeIgniter\Files\File->getRandomName()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:21:19 --> syntax error, unexpected 'return' (T_RETURN)
+in APPPATH/Controllers/ExplorerController.php on line 48.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 [internal function]: spl_autoload_call()
+ 5 SYSTEMPATH/CodeIgniter.php(892): class_exists()
+ 6 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:21:48 --> The uploaded file has already been moved.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 133.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(133): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+ 2 APPPATH/Controllers/ExplorerController.php(42): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:25:30 --> The original file is not a valid file.
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 137.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(137): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+ 2 APPPATH/Controllers/ExplorerController.php(36): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:48:13 --> Call to a member function hasMoved() on null
+in APPPATH/Controllers/ExplorerController.php on line 35.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:48:20 --> Call to a member function hasMoved() on null
+in APPPATH/Controllers/ExplorerController.php on line 35.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 21:48:21 --> Call to a member function hasMoved() on null
+in APPPATH/Controllers/ExplorerController.php on line 35.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:08:44 --> syntax error, unexpected '}', expecting ';'
+in APPPATH/Controllers/ExplorerController.php on line 46.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 [internal function]: spl_autoload_call()
+ 5 SYSTEMPATH/CodeIgniter.php(892): class_exists()
+ 6 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:15:17 --> Undefined variable: request
+in APPPATH/Controllers/ExplorerController.php on line 44.
+ 1 APPPATH/Controllers/ExplorerController.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:07 --> unlink(./pdf/root/Matières/tony/new_2/new_3/undefined): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:09 --> unlink(./pdf/root/Matières/tony/new_2/new_3/undefined): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:09 --> unlink(./pdf/root/Matières/tony/new_2/new_3/undefined): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:11 --> unlink(./pdf/root/Matières/tony/new_2/new_3): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:16 --> unlink(./pdf/root/Matières/tony/new_2/new_3): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:18 --> unlink(./pdf/root/Matières/tony/new_2): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:37:23 --> unlink(./pdf/root/Matières/tony/new/nuevo): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 22:38:47 --> unlink(./pdf/root/dossier/aaaa): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 51.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(51): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 23:07:30 --> unlink(./pdf/root/dossier/aaaa): Is a directory
+in APPPATH/Controllers/ExplorerController.php on line 60.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/ExplorerController.php(60): unlink()
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->deleteElement()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 23:08:56 --> mkdir(): File exists
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 176.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/HTTP/Files/UploadedFile.php(176): mkdir()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath()
+ 4 APPPATH/Controllers/ExplorerController.php(40): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 23:45:25 --> mkdir(): File exists
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 176.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/HTTP/Files/UploadedFile.php(176): mkdir()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath()
+ 4 APPPATH/Controllers/ExplorerController.php(37): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-12 23:45:38 --> mkdir(): File exists
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 176.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/HTTP/Files/UploadedFile.php(176): mkdir()
+ 3 SYSTEMPATH/HTTP/Files/UploadedFile.php(130): CodeIgniter\HTTP\Files\UploadedFile->setPath()
+ 4 APPPATH/Controllers/ExplorerController.php(37): CodeIgniter\HTTP\Files\UploadedFile->move()
+ 5 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\ExplorerController->addFile()
+ 6 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')

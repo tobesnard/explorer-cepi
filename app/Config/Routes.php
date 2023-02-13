@@ -32,6 +32,15 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'LoginController::index');
 $routes->get('/explorer', 'ExplorerController::index');
+$routes->get('/menu', 'MenuController::index');
+$routes->get('/explorer/getTree', 'ExplorerController::getTree');
+$routes->put('/explorer/add/directory', 'ExplorerController::addDirectory');
+$routes->post('/explorer/add/file', 'ExplorerController::addFile');
+$routes->delete('/explorer/delete', 'ExplorerController::deleteElement');
+$routes->get('/menu/regeneration', 'MenuController::regeneration');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

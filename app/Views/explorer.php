@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
-  </head>
+</head>
 <body style="height:920px ;background-color: #b07d7d8a;
     background-image: url(../images/bg_header.jpg);
     background-blend-mode: lighten;">
+
+
+
 
 <!-- entête -->
 <div  id="header" class=" container-fluid ">
@@ -33,58 +36,7 @@
         </nav>  
     </div>
 </div>  
-<style>
 
-#entreprise-animation{
-  position:absolute;
-  zoom: 1.2;
-  top: 0px;
-}
-#entreprise-animation .entreprise{
-  position:absolute;
-}
-#entreprise-animation .effect{
-  position:absolute;
-}
-#entreprise-animation .upper{
-    margin-top: -3px;
-    margin-left: 2px;
-    opacity:0.9;
-}
-span#effet {
-  text-transform: uppercase;
-  border: 4px double rgba(255, 255, 255, 0.25);
-  border-width: 4px 0;
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  width: 40em;
-  margin: 0 0 0 -20em;
-}
-span#effect span {
-  margin: 0 auto;
-  text-shadow: 0 0 13px #ed722dab, 1px 2px 3px #863d1378;
-  background: url(images/animated-text-fill.png) repeat-y;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: aitf 60s linear infinite;
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-
-}
-
-
-@-webkit-keyframes aitf {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-</style>
 
 
 
@@ -139,10 +91,10 @@ span#effect span {
         <div class="col card-container" >
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">visionneuse PDF</h5>
+                    <h5 class="card-title">Visionneuse PDF</h5>
                 </div>
                 <div class="card-body card-body-visio d-inline-flex p-2" > 
-                    <embed id="embed" src="pdf/botanique2.pdf" width="100%"  type="application/pdf"/> 
+                    <embed id="embed" src="pdf/regeneration/Botanique/botanique2.pdf" width="100%"  type="application/pdf"/> 
                 </div>
             </div>
         </div>
@@ -160,7 +112,8 @@ span#effect span {
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-trash-can"></i></button>
                         <button type="button" class="btn rounded-circle shadow-sm btn-primary mb-1 "><i class="fa-solid fa-folder-plus"></i></button>
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-file-circle-plus"></i></button>
-                        <button type="button" class="btn rounded-circle shadow  btn-primary mb-1"><i class="fa-solid fa-xmark"></i></button>        
+                        <button type="button" id="regeneration" class="btn rounded-circle shadow  btn-primary mb-1" data-toggle="tooltip" data-placement="right" title="Régénère les fichiers " style="background: var(--main-bg-color);">
+                            <i class="fa-solid fa-arrows-spin" style="font-size: x-large; position: relative; top: 1px;"></i></button>        
                     </div>
                 </div>
             </div>
@@ -174,7 +127,7 @@ span#effect span {
 
 <!-- Modal -->
 <div class="modal fade mt-5" id="modal" tabindex="-1" >
-  <form class="form" action="#" method="post">
+  <form id="formElem" class="form" action="#" method="post">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -196,8 +149,8 @@ span#effect span {
 <!-- Add Directory -->
 <template id="modal-addDirectory">
   <div class="form-floating mb-3">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-    <label for="floatingInput">Nom du Répertoire</label>
+    <input type="text" name="dirname" class="form-control" id="dirname"  placeholder="name@example.com">
+    <label for="dirname">Nom du Répertoire</label>
   </div>
 </template>
 
@@ -205,7 +158,7 @@ span#effect span {
 <!-- Import Files -->
 <template id="modal-addFile">
     <div class="mb-3">
-      <input class="form-control" type="file" id="formFile">
+      <input class="form-control" type="file" id="files_inputbox"  name="file">
     </div>
     <div class="mb-2"><div class="or-separatorLigne"></div><div  class="or-separatorText">Ou</div></div>
       <div class="dropzone" id="dropZone-addFiles">
@@ -218,21 +171,71 @@ span#effect span {
       </div>
 </template>
 
-<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+
+<style>
+/* STYLES A EXTERNALISE */
+#entreprise-animation{
+  position:absolute;
+  zoom: 1.2;
+  top: 0px;
+}
+#entreprise-animation .entreprise{
+  position:absolute;
+}
+#entreprise-animation .effect{
+  position:absolute;
+}
+#entreprise-animation .upper{
+    margin-top: -3px;
+    margin-left: 2px;
+    opacity:0.9;
+}
+span#effet {
+  text-transform: uppercase;
+  border: 4px double rgba(255, 255, 255, 0.25);
+  border-width: 4px 0;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 40em;
+  margin: 0 0 0 -20em;
+}
+span#effect span {
+  margin: 0 auto;
+  text-shadow: 0 0 13px #ed722dab, 1px 2px 3px #863d1378;
+  background: url(images/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 60s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+
+}
+
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+</style>
+
+
+
+
 <script type="text/javascript" src="https://kit.fontawesome.com/cf1044164a.js" crossorigin="anonymous" async></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script type="text/javascript" src="js/explorer.js"></script>
 
-<!-- <script type="importmap">
-  {
-    "imports": {
-      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-    }
-  }
-</script>
-<script type="module" src="js/explorer.main.js"></script> -->
+
 
 </body>
 </html>
