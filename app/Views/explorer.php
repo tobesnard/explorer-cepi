@@ -158,7 +158,7 @@
 <!-- Import Files -->
 <template id="modal-addFile">
     <div class="mb-3">
-      <input class="form-control" type="file" id="files_inputbox"  name="file">
+      <input  type="file" name="file" accept=".pdf"  id="files_inputbox" class="form-control" >
     </div>
     <div class="mb-2"><div class="or-separatorLigne"></div><div  class="or-separatorText">Ou</div></div>
       <div class="dropzone" id="dropZone-addFiles">

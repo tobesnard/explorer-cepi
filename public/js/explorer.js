@@ -92,6 +92,7 @@ TreeView.addFile = function (e){
             url: "explorer/add/file", 
             paramName: "file",
             maxFiles: 1,
+            acceptedFiles: ".pdf",
             maxFilesize: 10, 
             addRemoveLinks: true,
             init: function() {
