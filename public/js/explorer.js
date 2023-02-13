@@ -5,6 +5,7 @@
 let TreeView = {}
 
 TreeView.selecter="#treeview" // Selecteur 
+TreeView.fileSelected={}
 
 TreeView.json=[
     // Données pour la demo
@@ -142,7 +143,6 @@ TreeView.delete=function (e){
 TreeView.addListeners=function(){
     // Les évenements sur le Treeview
     $("#treeview li").mouseover(function(e){
-        console.log("mouseover")
         $( "#treeview li" ).each(function() {
             $(this).removeClass("mouseover")
             $(this).next().hide();
@@ -151,25 +151,42 @@ TreeView.addListeners=function(){
         $(this).next().show();
         $('.more-tools').hide()
     })
+
+    $("#treeview li").click(function(e){
+        li =$($(e.target).parent('li'))
+        let type = li.attr('type')
+        if(type == "file" ){
+            TreeView.fileSelected ={
+                path: li.attr('path'),
+                filename:li.attr('filename'),
+                pathfile:li.attr('pathfile'),
+                type:li.attr('type')
+            }
+        $(TreeView.selecter+" li").removeClass('li-selected')
+        li.addClass('li-selected')
+        console.dir(TreeView.fileSelected)
+    }
+    })
+
 }
 
-TreeView.directoryHtml=function(type, name, href, opened, padding=0, offset=0){
+TreeView.directoryHtml=function(type, pathfile, path, filename, opened, padding=0, offset=0){
     // HTML pour une ligne dossier
-    return ` <li onclick="TreeView.openclose($(this))" type="${type}"  pathfile="${href}">
+    return ` <li onclick="TreeView.openclose($(this))" type="${type}"  pathfile="${pathfile}" path="${path}" filename="${filename}" >
                 <span><i class="chevron fa-solid fa-circle-chevron-right ${opened ? 'folder-open' : 'folder-close'}"  style="margin-left:${padding}px;padding-left:${offset}px"></i></span>
                 <span class="directory fa-solid fa-folder " ></span>
-                <span class="dirname">${name}</span>
+                <span class="dirname">${filename}</span>
             </li>
             <span class="tools-box tools-box-directory"></span>
             `
 }
 
-TreeView.fileHtml=function(type, name, href, modificationDate, padding=0, offset=0){
+TreeView.fileHtml=function(type, pathfile, path, filename, modificationDate, padding=0, offset=0){
     // HTML pour une ligne fichier
-    return `<li onclick="Viewer.openFile('${href}')" type="${type}"  pathfile="${href}">
+    return `<li onclick="Viewer.openFile('${pathfile}')" type="${type}"  pathfile="${pathfile}" path="${path}" filename="${filename}" >
                 <div class="filename" style="padding-left:${padding}px">
                     <span class="file fa-regular fa-file-pdf" ></span>
-                    <span>${name}</span>
+                    <span>${filename}</span>
                 </div>
                 <div class="modifDate" style="padding-left:${padding}px" >( Modifié le : ${modificationDate} )</div>
                 </li>
@@ -182,14 +199,14 @@ TreeView.explore=function( json ,depth=0 ){
         html=""
         for( e of json){
             if(e.type == "directory"){ 
-                html+= TreeView.directoryHtml(e.type,e.name, e.href, e.opened, depth*20  )
+                html+= TreeView.directoryHtml(e.type, e.pathfile, e.path, e.filename, e.opened, depth*20  )
                 if(e.children ){
                     html+="<ul>"+TreeView.explore(e.children, depth+1)+"</ul>"
                 }
             }else{
                 for(f of e ){
                     if(f.type == "file"){ 
-                        html+=TreeView.fileHtml(f.type, f.name, f.href, f.modificationDate, depth*20 )
+                        html+=TreeView.fileHtml(f.type, f.pathfile, f.path, f.filename, f.modificationDate, depth*20 )
                     }
                 }
             }
@@ -278,8 +295,11 @@ $(function() {
         document.location.href="/"
     })
 
-    $("button").keypress(function(e){
+    $("#dirname").keypress(function(e){
         e.preventDefault()
+        if(e.which == 13) {
+            alert('You pressed enter!');
+        }
     })
 })
 

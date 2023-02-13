@@ -127,7 +127,7 @@
 
 <!-- Modal -->
 <div class="modal fade mt-5" id="modal" tabindex="-1" >
-  <form id="formElem" class="form" action="#" method="post">
+  <form id="formElem" class="form"  method="">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

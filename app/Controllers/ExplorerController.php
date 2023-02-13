@@ -61,10 +61,10 @@ class ExplorerController extends BaseController
             $pathfile=$path."/".$file; 
             if(($file != ".") && ($file != "..")) {
                 if(file_exists($pathfile) && is_dir($pathfile)) {
-                    $resultsDirs[] = [ "type"=>"directory","name"=>$file , "href"=>$pathfile, "children"=>static::explore($pathfile),"opened"=>false ]; 
+                    $resultsDirs[] = [ "type"=>"directory" , "pathfile"=>$pathfile, "path"=>$path, "filename"=>$file, "children"=>static::explore($pathfile),"opened"=>false ]; 
                 }
                 else {
-                    $resultFiles[] =["type"=>"file","name"=>$file,"href"=>$pathfile, "modificationDate"=>date ("d/m/Y H:i", filemtime($pathfile))];
+                    $resultFiles[] =["type"=>"file", "pathfile"=>$pathfile, "path"=>$path, "filename"=>$file, "modificationDate"=>date ("d/m/Y H:i", filemtime($pathfile))];
                 }
             }
         }
