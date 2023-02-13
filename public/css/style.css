@@ -359,15 +359,26 @@ button.close-button{
 }
 
 
-/* Barre d'outils */
 .btn-group-vertical{
-    margin-left: -42px;
+    margin-left: -18px;
     width:50px;
 }
 .card.tools{
-    width:32px;
+    width:0px;
     margin-left: 20px;
+    padding:0;
 }
+#card-tools .card-header{
+    padding-left: 0; 
+}
+#card-tools .card-body{
+   padding-left:0;
+}
+
+/* ****************************************************************************** */
+/* MENU */
+/* Barre d'outils */
+
 button.rounded-circle{
     background-color: #323639;
     border: #9fb07d thin solid;
@@ -377,8 +388,16 @@ button.rounded-circle{
 button.rounded-circle:hover{
     background-color: #9fb07d;
     border: #9fb07d thin solid;
-    width: 50px;
-    height: 50px;
+    /* width: 50px;
+    height: 50px; */
+    background-image: url(../images/fingerprint.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: soft-light;
+}
+button.rounded-circle:hover i{
+    color: #var(var(--main-dark-color));
 }
 
 

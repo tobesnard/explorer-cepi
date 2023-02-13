@@ -101,7 +101,7 @@
 
 
         <!-- Outils -->
-        <div class="col-1  px-0">
+        <div id="card-tools" class="col-1  px-0">
             <div class="card tools">
                 <div class="card-header">
                      <h5 class="card-title">&nbsp;</h5>
