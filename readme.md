@@ -21,7 +21,7 @@ Une version en ligne est disponible [ici](http://109.21.6.9:38669)
 
 ## Bug connus
 - les événements clavier tendent à provoquer les erreurs 404
-- la création d'un dossier sur un documents interrompt l'upload du fichier
+- la création d'un dossier sur un documents interrompt l'upload du fichier. Il faut se mettre sur un dossier pour fonctionner. Une exolution serait de placer le fichier dans le dossier parent de la position actuelle.
 - sur la page de login, l'animation failli de temps en temps
 - il manque une barre de progression lors d'un upload, cela donne un sensation de bug du système
 
