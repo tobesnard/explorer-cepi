@@ -1,0 +1,227 @@
+*{
+    --neon-color:rgb(82, 175, 95);
+    --selection-bg:#9fb07d29;
+    /* --text-shadow:-3px 0px 2px var(--neon-color), 0px 2px 2px var(--neon-color), 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color); */
+    --text-shadow:-3px 0px 2px var(--neon-color), 0px 2px 2px var(--neon-color), 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color), 1px 1px 11px white, -2px -2px 9px white, 2px 3px 1px black, 2px 3px 0px black;
+    --box-shadow:  -3px 0px 2px var(--neon-color),                     0px 2px 2px var(--neon-color),                     0 0 5px var(--neon-color),                     0 0 10px var(--neon-color),                     0 0 15px var(--neon-color),                    inset -3px 0px 2px var(--neon-color),                     inset 0px 2px 2px var(--neon-color),                     inset 0 0 5px var(--neon-color),                     inset 0 0 10px var(--neon-color),                     inset 0 0 15px var(--neon-color), 6px 9px 12px black, 6px 9px 24px black
+
+    ;
+    --card-title-x:15px;
+    --card-title-y:15px;
+}
+
+/* Font */
+@font-face {
+    font-family: robotomono;
+    src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+}
+#treeview li .filename, #treeview li .dirname, #treeview li .modifDate, .dropzone h3, .dropzone div{
+    color:white;
+    text-shadow: var(--text-shadow);
+    font-family: 'robotomono' !important;
+    font-weight: 200;
+}
+.modal button{
+    color:white;
+    text-shadow: var(--text-shadow);
+    font-family: 'robotomono' !important;
+}
+
+
+
+
+.card-header, .modal-header {
+    border: thin white solid;
+    position: relative;
+    height: 65px;
+    background: transparent;
+    box-shadow: unset;
+    border-bottom: none;
+}
+
+h5.card-title, .modal-header h1 {
+    width: 89%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    border: thin white solid;
+    box-shadow: var(--box-shadow);
+    right: var(--card-title-x);
+    top: var(--card-title-y);
+}
+#card-tools .card-title{
+    display :none;
+}
+#card-tools .card-header, #card-tools .card-body{
+    padding-left: 0;
+    left: -21px;
+    position: relative;
+    border:none;
+}
+.card-container, #card-tools{
+    /* border:thin white solid; */
+    border-radius: 11px;
+    box-shadow:var(--box-shadow);
+}
+
+.card-body {
+    background: transparent !important;
+    border: thin white solid;
+    border-top: none;
+}
+#card-viewer .card-body{
+    justify-content: flex-end;
+}
+
+#card-viewer{
+    margin-left: 15px;
+    padding: 0;
+}
+#card-tools{
+    border: thin white solid;
+    border-radius: 7px;
+    width: 15px;
+    position: relative;
+    left: 30px;
+    margin: 0px;
+}
+
+
+button, button.rounded-circle{
+    box-shadow: var(--box-shadow)!important;
+    border: thin white solid;
+}
+.btn-group-vertical button.rounded-circle{
+    background: #6f4e52;
+    /* box-shadow:var(--box-shadow); */
+  
+}
+.btn-group-vertical button.rounded-circle:hover{
+    text-shadow: var(--text-shadow);
+    border-color: rgb(112 235 129);
+}
+
+
+
+
+
+h5.card-title, .modal h1, .modal button{
+    color: white;
+    text-shadow: var(--text-shadow);
+    
+}
+
+embed{
+    border-radius: 9px;
+    margin: 5px;
+    /* left: 10px; */
+    position: relative;
+}
+
+
+#treeview{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+#treeview .mouseover{
+    background: var(--selection-bg);
+}
+
+
+
+#treeview li .filename, #treeview li .modifDate{
+    font-size:x-small;
+}
+#treeview li .modifDate{
+    margin-left: 20px;
+    margin-top: -2px;
+}
+
+.directory, .file, .chevron{
+    color: white!important;
+    text-shadow: var(--text-shadow);
+}
+.folder-close::before{
+    top: 6px;
+    position: relative; 
+}
+
+#tools button{
+    border-color:white!important;
+}
+#tools #btn-addDirectory i::before, #tools #btnAddFile i::before, .input-box i::before{
+    color:white !important;
+}
+
+
+#tools #btndeletion i::before{
+    opacity: 0.4;
+    text-shadow: -1px 1px 1px white, 0px 0px 8px white;
+}
+#tools #btndeletion i:hover::before {
+    color:red;
+    opacity: 1;
+}
+
+.input-box{
+    border:thin white solid;
+    box-shadow: var(--box-shadow);
+}
+.input-box span, .input-box input{
+    background:transparent;
+    border:none;
+}
+.input-box input{
+    border-left:thin white solid;
+}
+#folderInput, #folderInput:focus{
+    background-color: white;
+    opacity: 0.9;
+}
+
+/* Modal */
+.modal-dialog{
+    border: thin white solid;
+    border-radius: 9px;
+    box-shadow: var(--box-shadow);
+}
+.modal-dialog,.modal-content, .modal-header,.modal-body, .modal-footer, .dropzone,  .or-separatorText, .modal button{
+    background:rgb(82 175 95 / 9%)!important;
+}
+.modal-content{
+    background: #ffffff05 !important;
+    /* box-shadow: inset 0px 0px 116px #2525258f, inset 0 0 22px #2525259e, 10px 10px 21px black ; */
+}
+.modal-body{
+    width: 100%;
+    display: flex;
+    margin: 0;
+    justify-content: flex-end; 
+    padding-right: 0;
+    right: 8px;
+}
+.modal-footer, .modal-header{
+    border:none;
+}
+.dropzone{
+    /* background:white; */
+    width: 100%;
+    border:none;
+    text-shadow: var(--text-shadow);
+}
+
+
+.dropzone .fa-file-arrow-up:before{
+    text-shadow: 0px 0px 4px black,0px 0px 51px white, 0 0 13px var(--neon-color);
+    color: var(--neon-color);
+}
+
+.modal button{
+    border:thin white solid;
+    box-shadow: var(--box-shadow);
+}
+.modal .close-button, .modal .or-separatorLigne{
+    display:none;
+}

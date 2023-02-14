@@ -198,6 +198,9 @@ TreeView.directoryHtml=function(type, pathfile, path, filename, opened, padding=
             `
 }
 
+
+
+
 TreeView.fileHtml=function(type, pathfile, path, filename, modificationDate, padding=0, offset=0){
     // HTML pour une ligne fichier
     return `<li onclick="Viewer.openFile('${pathfile}')" type="${type}"  pathfile="${pathfile}" path="${path}" filename="${filename}" >
@@ -205,7 +208,7 @@ TreeView.fileHtml=function(type, pathfile, path, filename, modificationDate, pad
                     <span class="file fa-regular fa-file-pdf" ></span>
                     <span>${filename}</span>
                 </div>
-                <div class="modifDate" style="padding-left:${padding}px" >( Modifié le : ${modificationDate} )</div>
+                <div class="modifDate" style="padding-left:${padding}px" >Modifié le : ${modificationDate}</div>
                 </li>
             <span class="tools-box tools-box-file"></span>
             `
@@ -270,9 +273,6 @@ TreeView.box=function(box){
     }
 }
 
-
-
-
 TreeView.openclose=function(e){
      // Ouvre ou ferme un dossier
      let elmt = e.find('.chevron')
@@ -290,7 +290,7 @@ TreeView.openclose=function(e){
 
 
 //////////////////////////////////////////////////////////////////////
-/// 
+///  Visionneuse
 /////////////////////////////////////////////////////////////////////
 
 
@@ -302,9 +302,14 @@ Viewer.openFile = function(pdf){
 }
 
 
+//////////////////////////////////////////////////////////////////////
+/// Menu
+/////////////////////////////////////////////////////////////////////
+
 
 let Menu = {}
-Viewer.regenerate = function(){
+
+Menu.regenerate = function(){
     $.ajax({
         url: "/menu/regeneration",
         method: "GET",
@@ -315,11 +320,41 @@ Viewer.regenerate = function(){
     })
 }
 
+Menu.theme={}
+Menu.theme.activated=false;
+Menu.theme.change=function(){
+    if(Menu.theme.activated == false){
+        $('#theme-secondaire').removeAttr('disabled')
+        Menu.theme.changeIcons()
+        Menu.theme.activated = true;
+    }else{
+        $('#theme-secondaire').attr('disabled','true')
+        Menu.theme.restoreIcons()
+        Menu.theme.activated = false;
+    }
+    console.log("theme is "+Menu.theme.activated)
+}
+Menu.theme.changeIcons=function(){
+    $('.directory').removeClass('fa-solid').addClass('fa-regular')
+    $('.chevron').removeClass('fa-circle-chevron').addClass('fa-chevron-right')
+    // $('.file').removeClass('fa-solid').addClass('fa-regular')
+}
+Menu.theme.restoreIcons=function(){
+    $('.directory').removeClass('fa-regular').addClass('fa-solid')
+    $('.chevron').removeClass('fa-chevron-right').addClass('fa-circle-chevron')
+    // $('.file').removeClass('fa-regular').addClass('fa-solid')
+}
+
+
+
+
 $("button#regeneration").click(function(){
-    Viewer.regenerate()
+    Menu.regenerate()
 })
 
-
+$("button#theme").click(function(){
+    Menu.theme.change()
+})
 
 
 
@@ -332,7 +367,13 @@ $(function() {
         document.location.href="/"
     })
 
+ //activation du theme pour déboguage
  
+//  Menu.theme.changeIcons()
+//  $('#theme').click()
+
+
+
 })
 
 

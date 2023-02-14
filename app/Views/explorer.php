@@ -10,6 +10,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <link id="theme-secondaire" rel="stylesheet" href="css/theme.css" disabled="true">
 
 </head>
 <body style="height:920px ;background-color: #b07d7d8a;
@@ -74,7 +75,7 @@
 
 
 <!-- Container Principale -->
-<div class="container">
+<div id="body-div" class="container">
     <div class="row" style="min-height: 500px;">
 
 
@@ -112,7 +113,7 @@
                 </div>
                 <div class="card-body" style="background-color: #323639;"> 
                     <div class="btn-group-vertical">
-                        <button type="button" id="imprimer" OnClick="javascript:window.print()" class="btn rounded-circle btn-primary mb-1" ><i class="fa-solid fa-print"></i></button>
+                        <button type="button" id="theme"  class="btn rounded-circle btn-primary mb-1" ><i class="fa-solid fa-window-restore"></i></button>
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-trash-can"></i></button>
                         <button type="button" class="btn rounded-circle shadow-sm btn-primary mb-1 "><i class="fa-solid fa-folder-plus"></i></button>
                         <button type="button" class="btn rounded-circle btn-primary mb-1 "><i class="fa-solid fa-file-circle-plus"></i></button>
