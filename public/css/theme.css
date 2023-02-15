@@ -1,11 +1,11 @@
 *{
     --neon-color:rgb(82, 175, 95);
+    --neon-color:rgb(175, 102, 82);
     --selection-bg:#9fb07d29;
     /* --text-shadow:-3px 0px 2px var(--neon-color), 0px 2px 2px var(--neon-color), 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color); */
     --text-shadow:-3px 0px 2px var(--neon-color), 0px 2px 2px var(--neon-color), 0 0 5px var(--neon-color), 0 0 10px var(--neon-color), 0 0 15px var(--neon-color), 1px 1px 11px white, -2px -2px 9px white, 2px 3px 1px black, 2px 3px 0px black;
-    --box-shadow:  -3px 0px 2px var(--neon-color),                     0px 2px 2px var(--neon-color),                     0 0 5px var(--neon-color),                     0 0 10px var(--neon-color),                     0 0 15px var(--neon-color),                    inset -3px 0px 2px var(--neon-color),                     inset 0px 2px 2px var(--neon-color),                     inset 0 0 5px var(--neon-color),                     inset 0 0 10px var(--neon-color),                     inset 0 0 15px var(--neon-color), 6px 9px 12px black, 6px 9px 24px black
-
-    ;
+    --box-shadow:  -3px 0px 2px var(--neon-color),                     0px 2px 2px var(--neon-color),                     0 0 5px var(--neon-color),                     0 0 10px var(--neon-color),                     0 0 15px var(--neon-color),                    inset -3px 0px 2px var(--neon-color),                     inset 0px 2px 2px var(--neon-color),                     inset 0 0 5px var(--neon-color),                     inset 0 0 10px var(--neon-color),                     inset 0 0 15px var(--neon-color), 6px 9px 12px black, 6px 9px 24px black ;
+    --box-shadow-hover :0px 3px 13px black, 0px 10px 6px var(--neon-color), 0 0px 13px black, 0px -10px 6px var(--neon-color) ;
     --card-title-x:15px;
     --card-title-y:15px;
 }
@@ -115,7 +115,8 @@ button, button.rounded-circle{
 }
 .btn-group-vertical button.rounded-circle:hover{
     text-shadow: var(--text-shadow);
-    border-color: rgb(112 235 129);
+    border-color: var(--neon-color) solid 0px !important;
+    box-shadow:var(--box-shadow-hover) !important;
 }
 
 
@@ -151,9 +152,13 @@ embed{
 
 
 
+
 #treeview li .modifDate{
     margin-left: 25px;
     margin-top: -2px;
+}
+#treeview .li-selected{
+    background-color: var(--neon-color) !important;
 }
 
 .directory, .file, .chevron{
@@ -204,6 +209,13 @@ embed{
     opacity: 0.9;
 }
 
+
+/* .btn-outline-warning:hover {
+    background-color: var(--neon-color)!important;
+} */
+
+
+
 /* Modal */
 .modal{
     background-image: url(../images/bg_header.jpg);
@@ -213,7 +225,7 @@ embed{
     border-radius: 9px;
     box-shadow: var(--box-shadow);
 }
-.modal-dialog,.modal-content, .modal-header,.modal-body, .modal-footer,  .or-separatorText, .modal button{
+.modal-dialog,.modal-content, .modal-header,.modal-body, .modal-footer,   .modal button{
     background:rgb(82 175 95 / 9%)!important;
 }
 .modal-content{
@@ -248,6 +260,9 @@ embed{
 .modal button{
     border:thin white solid;
     box-shadow: var(--box-shadow);
+}
+.modal .or-separatorText{
+    background:transparent ;
 }
 .modal .close-button, .modal .or-separatorLigne{
     display:none;
