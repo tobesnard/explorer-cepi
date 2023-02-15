@@ -41,6 +41,7 @@ TreeView.refresh=function(){
         TreeView.tree() // Construit l'arbre
         TreeView.toolsbar() // Ajout les raccourcis
         TreeView.addListeners() // Les evenements
+        Menu.theme.switch()
         // console.log(JSON.stringify(TreeView.json))
     })
 }
@@ -320,31 +321,43 @@ Menu.regenerate = function(){
     })
 }
 
+
+
+
 Menu.theme={}
-Menu.theme.activated=false;
-Menu.theme.change=function(){
+Menu.theme.activated=true;
+// Menu.theme.load=function(){
+//     if(Menu.theme.activated){
+//         $('#theme-secondaire').removeAttr('disabled')
+//         Menu.theme.changeIcons()
+//     }
+//     else{
+//         $('#theme-secondaire').attr('disabled','true')
+//         Menu.theme.changeIcons()
+//     }
+// }
+
+Menu.theme.switch=function(theme=null){
+    if( theme != null) Menu.theme.activated=theme
     if(Menu.theme.activated == false){
         $('#theme-secondaire').removeAttr('disabled')
-        Menu.theme.changeIcons()
-        Menu.theme.activated = true;
     }else{
         $('#theme-secondaire').attr('disabled','true')
-        Menu.theme.restoreIcons()
-        Menu.theme.activated = false;
     }
-    console.log("theme is "+Menu.theme.activated)
-}
-Menu.theme.changeIcons=function(){
-    $('.directory').removeClass('fa-solid').addClass('fa-regular')
-    $('.chevron').removeClass('fa-circle-chevron').addClass('fa-chevron-right')
-    // $('.file').removeClass('fa-solid').addClass('fa-regular')
-}
-Menu.theme.restoreIcons=function(){
-    $('.directory').removeClass('fa-regular').addClass('fa-solid')
-    $('.chevron').removeClass('fa-chevron-right').addClass('fa-circle-chevron')
-    // $('.file').removeClass('fa-regular').addClass('fa-solid')
+    Menu.theme.activated = !Menu.theme.activated;
+    Menu.theme.changeIcons()
 }
 
+Menu.theme.changeIcons=function(){
+    console.log("change icons")
+    if(Menu.theme.activated){
+        $('.directory').removeClass('fa-solid').addClass('fa-regular')
+        $('.chevron').removeClass('fa-circle-chevron').addClass('fa-chevron-right')
+    }else{
+        $('.directory').removeClass('fa-regular').addClass('fa-solid')
+        $('.chevron').removeClass('fa-chevron-right').addClass('fa-circle-chevron')
+    }
+}
 
 
 
@@ -353,7 +366,7 @@ $("button#regeneration").click(function(){
 })
 
 $("button#theme").click(function(){
-    Menu.theme.change()
+    Menu.theme.switch()
 })
 
 
@@ -369,9 +382,12 @@ $(function() {
 
  //activation du theme pour déboguage
  
-//  Menu.theme.changeIcons()
-//  $('#theme').click()
+ 
+    // $('#theme').click()
+    // Menu.theme.changeIcons()
 
+    // Menu.theme.activated=false;
+    Menu.theme.switch()
 
 
 })
