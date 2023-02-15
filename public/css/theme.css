@@ -27,7 +27,23 @@
     font-family: 'robotomono' !important;
 }
 
+.dirname{
+    font-size:large !important;
+}
+.filename{
+    font-size:small !important;
+}
+.modifDate{
+    font-size:xx-small !important;
+}
 
+
+
+#logout{
+    box-shadow: var(--box-shadow) !important;
+    border: thin white solid;
+    border-radius: 8px;
+}
 
 
 .card-header, .modal-header {
@@ -127,15 +143,16 @@ embed{
 
 #treeview .mouseover{
     background: var(--selection-bg);
+    border: thin white solid;
+    border-left: none;
+    box-shadow: var(--box-shadow);
 }
 
 
 
-#treeview li .filename, #treeview li .modifDate{
-    font-size:x-small;
-}
+
 #treeview li .modifDate{
-    margin-left: 20px;
+    margin-left: 25px;
     margin-top: -2px;
 }
 
@@ -155,6 +172,12 @@ embed{
     color:white !important;
 }
 
+#tools button{
+    box-shadow: unset !important;
+}
+#tools .group-tools{
+    box-shadow: var(--box-shadow);
+}
 
 #tools #btndeletion i::before{
     opacity: 0.4;
@@ -182,16 +205,19 @@ embed{
 }
 
 /* Modal */
+.modal{
+    background-image: url(../images/bg_header.jpg);
+}
 .modal-dialog{
     border: thin white solid;
     border-radius: 9px;
     box-shadow: var(--box-shadow);
 }
-.modal-dialog,.modal-content, .modal-header,.modal-body, .modal-footer, .dropzone,  .or-separatorText, .modal button{
+.modal-dialog,.modal-content, .modal-header,.modal-body, .modal-footer,  .or-separatorText, .modal button{
     background:rgb(82 175 95 / 9%)!important;
 }
 .modal-content{
-    background: #ffffff05 !important;
+    background: #50505066 !important;
     /* box-shadow: inset 0px 0px 116px #2525258f, inset 0 0 22px #2525259e, 10px 10px 21px black ; */
 }
 .modal-body{
@@ -210,6 +236,7 @@ embed{
     width: 100%;
     border:none;
     text-shadow: var(--text-shadow);
+    background: transparent !important;
 }
 
 

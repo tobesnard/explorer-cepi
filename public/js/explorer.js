@@ -41,7 +41,7 @@ TreeView.refresh=function(){
         TreeView.tree() // Construit l'arbre
         TreeView.toolsbar() // Ajout les raccourcis
         TreeView.addListeners() // Les evenements
-        Menu.theme.switch()
+        Menu.theme.refresh()
         // console.log(JSON.stringify(TreeView.json))
     })
 }
@@ -188,10 +188,10 @@ TreeView.addListeners=function(){
 
 }
 
-TreeView.directoryHtml=function(type, pathfile, path, filename, opened, padding=0, offset=0){
+TreeView.directoryHtml=function(type, pathfile, path, filename, opened, padding=0, offset=20){
     // HTML pour une ligne dossier
     return ` <li onclick="TreeView.openclose($(this))" type="${type}"  pathfile="${pathfile}" path="${path}" filename="${filename}" >
-                <span><i class="chevron fa-solid fa-circle-chevron-right ${opened ? 'folder-open' : 'folder-close'}"  style="margin-left:${padding}px;padding-left:${offset}px"></i></span>
+                <span style="padding-left:${offset}px"><i class="chevron fa-solid fa-circle-chevron-right ${opened ? 'folder-open' : 'folder-close'}"  style="margin-left:${padding}px;"></i></span>
                 <span class="directory fa-solid fa-folder " ></span>
                 <span class="dirname">${filename}</span>
             </li>
@@ -202,7 +202,7 @@ TreeView.directoryHtml=function(type, pathfile, path, filename, opened, padding=
 
 
 
-TreeView.fileHtml=function(type, pathfile, path, filename, modificationDate, padding=0, offset=0){
+TreeView.fileHtml=function(type, pathfile, path, filename, modificationDate, padding=0, offset=20){
     // HTML pour une ligne fichier
     return `<li onclick="Viewer.openFile('${pathfile}')" type="${type}"  pathfile="${pathfile}" path="${path}" filename="${filename}" >
                 <div class="filename" style="padding-left:${padding}px">
@@ -322,20 +322,13 @@ Menu.regenerate = function(){
 }
 
 
+//////////////////////////////////////////////////////////////////////
+/// Thème
+/////////////////////////////////////////////////////////////////////
 
 
 Menu.theme={}
 Menu.theme.activated=true;
-// Menu.theme.load=function(){
-//     if(Menu.theme.activated){
-//         $('#theme-secondaire').removeAttr('disabled')
-//         Menu.theme.changeIcons()
-//     }
-//     else{
-//         $('#theme-secondaire').attr('disabled','true')
-//         Menu.theme.changeIcons()
-//     }
-// }
 
 Menu.theme.switch=function(theme=null){
     if( theme != null) Menu.theme.activated=theme
@@ -346,6 +339,10 @@ Menu.theme.switch=function(theme=null){
     }
     Menu.theme.activated = !Menu.theme.activated;
     Menu.theme.changeIcons()
+}
+
+Menu.theme.refresh=function(){
+   Menu.theme.changeIcons()
 }
 
 Menu.theme.changeIcons=function(){
@@ -381,12 +378,8 @@ $(function() {
     })
 
  //activation du theme pour déboguage
- 
- 
-    // $('#theme').click()
-    // Menu.theme.changeIcons()
 
-    // Menu.theme.activated=false;
+    $('#theme').click()
     Menu.theme.switch()
 
 
